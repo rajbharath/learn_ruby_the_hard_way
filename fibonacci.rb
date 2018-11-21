@@ -1,21 +1,21 @@
 module Fib
-  Fib::IN_MEMORY = {
+  IN_MEMORY = {
     0 => 0,
     1 => 1
     }
   
-  def Fib::fibonacci(n)
-    return Fib::IN_MEMORY[n] if Fib::IN_MEMORY[n]
+  def Fib.fibonacci(n)
+    return IN_MEMORY[n] if IN_MEMORY[n]
     nth_result = self.fibonacci(n - 1) + self.fibonacci(n - 2)
-    Fib::IN_MEMORY[n] = nth_result
+    IN_MEMORY[n] = nth_result
     return nth_result
   end
 
-  def Fib::fibonacci_tail_recursive(nth_1, nth_2, current_iteration, n)
+  def Fib.fibonacci_tail_recursive(nth_1, nth_2, current_iteration, n)
     return 0 if n == 0
     return 1 if n == 1 or n == 2
     if current_iteration > n
-      Fib::IN_MEMORY[n] = nth_1 + nth_2
+      IN_MEMORY[n] = nth_1 + nth_2
       return nth_1 + nth_2
     end
 
