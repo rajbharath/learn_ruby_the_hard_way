@@ -19,7 +19,7 @@ end
 explicit_block { puts 'Explicit block is called!' }
 
 # You cannot pass multiple blocks to a method. Instead if needed, you can pass multiple Proc and Lambdas
-
+# lambda looks for correct number of arguments and return is only from lambda not from the enclosing function stack
 double = ->(number) { number * 2 }
 
 def double_caller(double_lambda)
